@@ -1,22 +1,23 @@
 import React from 'react';
+import CatalogCasa from '../CatalogElement/CatalogElement.js';
+import { Lista, CatalogoSection, CatalogoFiltros } from '../styled.js'
 
 
-
-const CatalogList = (props)=>{
-    const elements = props.catalogo.map((element)=>{
+const CatalogList = (props) => {
+    const casas = props.catalogo.map((casa,index) => {
         return (
-            <div>
-                <h3>{element.name}</h3>
-                <label>{element.address}</label>
-            </div>
+            <CatalogCasa {...casa} key={index}></CatalogCasa>
         )
     })
     return (
-        <section>
-            {elements}
-        </section>
+        <CatalogoSection>
+            <CatalogoFiltros></CatalogoFiltros>
+            <Lista>
+                {casas}
+            </Lista>
+        </CatalogoSection>
     )
-  }
-  
+}
+
 
 export default CatalogList;
