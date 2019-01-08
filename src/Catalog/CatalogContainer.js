@@ -17,8 +17,18 @@ class Catalog extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        catalogo: state.catalogo
+        catalogo: state.catalogo,
+        filtros: state.filtros
     }
 }
 
-export default connect(mapStateToProps)(Catalog);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        filtrar: (filtro) => { dispatch({ type: 'FILTRO_GENERAL', filtro }) },
+        filtrarTipo: (filtro) => { dispatch({ type: 'FILTRO_TIPO_INMUEBLE', filtro }) },
+        filtrarHabitaciones: (filtro) => { dispatch({ type: 'FILTRO_HABITACIONES', filtro }) },
+        filtrarPrecio: (filtro) => { dispatch({ type: 'FILTRO_PRECIO', filtro }) }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Catalog);

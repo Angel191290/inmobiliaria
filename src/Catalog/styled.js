@@ -7,7 +7,17 @@ export const Lista = styled.ul`
 `
 export const CatalogoSection = styled.section`
 `
-export const CatalogoFiltros = styled.div`
+export const CatalogoFiltros = styled.nav`
+    display: grid;
+    width: 50%;
+    margin: auto;
+    grid-template-columns: 35% 30% 35%;
+    grid-template-areas: "header header header";
+    >*{
+        padding: 10px;
+        border: 1px solid #e2e2e2;
+        margin: 5px 15px;
+    }
 `
 
 export const Casa = styled.li`
@@ -51,6 +61,21 @@ export const CasaDescripcion = styled.p`
 `
 
 export const CasaAcciones = styled.div`
+`
+export const FiltroGenerico = styled.input`
+    grid-area: header;
+`
+export const FiltroTipo = styled.input`
+
+`
+export const FiltroTipoLista = styled.datalist`
+
+`
+export const FiltroHabitaciones = styled.input`
+
+`
+export const FiltroPrecio = styled.input`
+
 `
 
 
